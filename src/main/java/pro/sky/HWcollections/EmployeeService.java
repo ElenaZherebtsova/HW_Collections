@@ -1,16 +1,11 @@
 package pro.sky.HWcollections;
 
-public class EmployeeService {
-    Employee[] employees = new Employee[]{
-            new Employee("Жан", "Рено"),
-            new Employee("Люк", "Бессон")
-    };
+import java.util.Collection;
 
-    public String getEmployeer(Integer number) {
-        final Employee employeer;
-        employeer = employees[number];
-        final String emplPrint = " " + employeer.getFirstName()
-                + " " + employeer.getLastName();
-        return emplPrint;
-    }
+public interface EmployeeService {
+    Employee add(String firstName, String lastName);
+    Employee remove(String firstName, String lastName);
+    Employee find(String firstName, String lastName);
+
+    Collection<Employee> printAll();
 }
